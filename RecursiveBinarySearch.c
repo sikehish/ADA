@@ -38,13 +38,13 @@ int main() {
         int x = arr[n/2];
         count = 0;
         binarySearch(arr, 0, n-1, x, &count);
-        fprintf(file, "%d %d\n",n, count);
+        fprintf(file, "%d\t%d\t",n, count);
 
         // Worst case: element is not present in array
         x = -1;
         count = 0;
         binarySearch(arr, 0, n-1, x, &count);
-        fprintf(file, "%d %d\n",n, count);
+        fprintf(file, "%d\t%d\n",n, count);
     }
 
     fclose(file);
