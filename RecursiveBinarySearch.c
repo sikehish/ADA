@@ -25,7 +25,7 @@ int main() {
     int values[] = {1000, 2000, 5000, 10000, 20000, 30000, 40000, 50000};
     int numOfValues = sizeof(values) / sizeof(int);
 
-    FILE *file = fopen("count.dat", "wa);
+    FILE *file = fopen("count.dat", "a");
 
     for (int i = 0; i < numOfValues; i++) {
         int n = values[i];
