@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 int binarySearch(int arr[], int low, int high, int x, int *count) {
     if (low > high) {
@@ -23,16 +22,13 @@ int binarySearch(int arr[], int low, int high, int x, int *count) {
 }
 
 int main() {
-    int n_values[] = {10, 100, 1000, 10000, 100000};
-    int num_n_values = sizeof(n_values) / sizeof(int);
+    int values[] = {1000, 2000, 5000, 10000, 20000, 30000, 40000, 50000};
+    int numOfValues = sizeof(values) / sizeof(int);
 
-    FILE *best_case_file = fopen("binary_search_best_case.txt", "w");
-    FILE *worst_case_file = fopen("binary_search_worst_case.txt", "w");
+    FILE *file = fopen("count.dat", "wa);
 
-    srand(time(0)); // seed random number generator
-
-    for (int i = 0; i < num_n_values; i++) {
-        int n = n_values[i];
+    for (int i = 0; i < numOfValues; i++) {
+        int n = values[i];
         int arr[n];
         for (int j = 0; j < n; j++) {
             arr[j] = j;
@@ -40,19 +36,17 @@ int main() {
 
         // Best case: element is present at mid index
         int x = arr[n/2];
-        int best_case_count = 0;
-        binarySearch(arr, 0, n-1, x, &best_case_count);
-        fprintf(best_case_file, "%d %d\n",n, best_case_count);
+        count = 0;
+        binarySearch(arr, 0, n-1, x, &count);
+        fprintf(file, "%d %d\n",n, count);
 
         // Worst case: element is not present in array
         x = -1;
-        int worst_case_count = 0;
-        binarySearch(arr, 0, n-1, x, &worst_case_count);
-        fprintf(worst_case_file, "%d %d\n",n, worst_case_count);
+        count = 0;
+        binarySearch(arr, 0, n-1, x, &count);
+        fprintf(file, "%d %d\n",n, count);
     }
 
-    fclose(best_case_file);
-    fclose(worst_case_file);
-
+    fclose(file);
     return 0;
 }
