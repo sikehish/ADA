@@ -69,12 +69,13 @@ void main()
 
 //gcdplot.txt
 set title 'GCD Plot'
-set xrange [0:10]
+set xrange [0:25]
 set yrange [0:100]
 set xlabel 'Input'
 set ylabel 'Count'
 set style data linespoints
-plot 'euclid.dat' u 1:2 w lp,'consint_time.txt' u 1:2 w lp
+plot 'euclid_time.txt' u 1:2 w lp,'consint_time.txt' u 1:2 w lp
+
 
 //euclid.dat
 1	0
