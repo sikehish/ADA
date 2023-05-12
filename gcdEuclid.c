@@ -43,7 +43,7 @@ void main()
 	long *a;
 	FILE  *fp,*fp1;
 	a=malloc(sizeof(long)*100);
-	fp=fopen("euclid.dat","a");
+	fp=fopen("euclid_time.txt","a");
 	fp1=fopen("consint_time.txt","a");
 	while(i<50)
 	{
@@ -53,7 +53,7 @@ void main()
           fprintf(fp,"%d\t%d\n",(int)(log(a[i-1])+1),c);
 		c=consint(a[i-1],a[i-2]);
 		printf("for numbers: %ld\t%ld\t consint count: %d\t for i: %d\n",a[i-1],a[i-2],c,i);
-          fprintf(fp1,"%d\t%d\n",(int)(log(a[i-1]])+1),c);
+          fprintf(fp1,"%d\t%d\n",(int)(log(a[i-1])+1),c);
 		if(i>=30)
 		{
 			i=i+2;
