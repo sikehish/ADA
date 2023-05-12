@@ -35,8 +35,8 @@ int main() {
         }
 
         // Best case: element is present at mid index
-        int x = arr[n/2];
-        count = 0;
+        int x = arr[(n-1)/2];
+        int count = 0;
         binarySearch(arr, 0, n-1, x, &count);
         fprintf(file, "%d\t%d\t",n, count);
 
@@ -50,3 +50,25 @@ int main() {
     fclose(file);
     return 0;
 }
+
+//plotfile.txt
+set title "Recursive Binary Search"
+set xrange [1000:50000]
+set yrange [1: 50]
+set xlabel 'Number of elemnts(n)'
+set ylabel 'Count(Number of Operations)'
+set style data linespoints
+plot 'count.dat' u 1:2 w l ,'count.dat' u 3:4 w l
+
+//count.dat
+1000	2	1000	28
+2000	2	2000	31
+5000	2	5000	37
+10000	2	10000	40
+20000	2	20000	43
+30000	2	30000	43
+40000	2	40000	46
+50000	2	50000	46
+
+
+
