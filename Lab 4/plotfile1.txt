@@ -1,0 +1,8 @@
+set title "Best Case String Matching"
+set xrange[0:1000]
+set yrange[0:1000]
+set xlabel "Input Size"
+set ylabel "Count"
+set style data linespoints
+plot 'str.dat' u 1:2 w lp
+pause -1 "Hit Any Key To Continue"
