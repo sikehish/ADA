@@ -34,6 +34,18 @@ int euclid(int m , int n){
 
     return count;
 }
+// int euclid(int m , int n){
+//     int count=0,temp;
+//     while(n>0){
+//         if(n>m){
+//             temp=m; m=n; n=m;
+//         }
+//         m-=n;
+//         count++;
+//     }
+
+//     return count;
+// }
 
 void main(){
     srand(time(NULL));
@@ -42,13 +54,13 @@ int x;
     fp=fopen("gcd.dat","a");
     for(int i=0; i<=10; i++){
         fprintf(fp, "%d ", i);
-        int x=rand()%100;
-        int y=rand()%100;
+        int x=rand()%100+1;
+        int y=rand()%100+1;
         printf("(%d,%d)\n",x,y);
         //CICF
         fprintf(fp, "%d\t", cicf(x,y));
         //Euclids
-        fprintf(fp, "%d\t", modified_euclid(x,y));
+        fprintf(fp, "%d\t", euclid(x,y));
         //Modified Euclids
         fprintf(fp, "%d\n", modified_euclid(x,y));
     }
