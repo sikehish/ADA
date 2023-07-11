@@ -1,0 +1,9 @@
+set title 'Worst Case Merge Plot'
+set xrange [0:1000]
+set yrange [10:500000]
+set xlabel 'Input'
+set ylabel 'Count'
+set style data linespoints
+plot 'quick_time.txt' u 1:4 w lp
+
+pause -1 "Hit any Key to Continue"
