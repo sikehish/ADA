@@ -4,15 +4,15 @@
 #include <stdlib.h>
 int n, stk[20], tos = -1;
 
-void dfs(int graph[][n], int curr, int *vis)
+void dfs(int graph[][n], int v, int *vis)
 {
-    vis[curr] = 1;
+    vis[v] = 1;
     for (int next = 0; next < n; ++next)
     {
-        if (graph[curr][next] && !vis[next])
+        if (graph[v][next] && !vis[next])
             dfs(graph, next, vis);
     }
-    stk[++tos] = curr;
+    stk[++tos] = v;
 }
 
 void main()
