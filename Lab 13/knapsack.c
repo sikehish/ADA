@@ -12,7 +12,6 @@ int knapsac(int wt, int weight[], int value[], int n)
 {
     int i, j;
     int knap[n + 1][wt + 1];
-    // printf("\nYOOOOOOO: %d %d\n", n + 1, wt + 1);
     for (i = 0; i <= n; i++)
     {
         for (j = 0; j <= wt; j++)
