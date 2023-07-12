@@ -8,6 +8,27 @@ int maximum(int a, int b)
     return max;
 }
 
+void composition(int n, int wt, int weight[], int knap[][wt + 1])
+{
+    int num = 0;
+    int subset[n];
+    int rc = wt;
+    for (int i = n; i >= 1; i--)
+    {
+        if (knap[i][rc] != knap[i - 1][rc])
+        {
+            subset[num++] = i;
+            rc -= weight[i - 1];
+        }
+        if (rc == 0)
+            break;
+    }
+    printf("Composition is : ");
+    for (int i = 0; i < num; i++)
+        printf("%d ", subset[i]);
+    printf("\n");
+}
+
 int knapsac(int wt, int weight[], int value[], int n)
 {
     int i, j;
@@ -26,33 +47,8 @@ int knapsac(int wt, int weight[], int value[], int n)
         }
         printf("\n");
     }
-
-    int opt_set[n + 1];
-
-    int rc = wt;
-    for (int i = n; i >= 1; i--)
-    {
-        opt_set[i] = 0;
-        if (knap[i][rc] != knap[i - 1][rc])
-        {
-            opt_set[i] = 1;
-            rc = rc - weight[i - 1];
-        }
-
-        if (rc == 0)
-            break;
-    }
-
     printf("\nThe optimum knapsac value is: %d\n", knap[n][wt]);
-    printf("The items part of the optimal set are: ");
-    j = n;
-    while (j > 0)
-    {
-        if (opt_set[j] == 1)
-            printf("%d ", j);
-        j--;
-    }
-    printf("\n");
+    composition(n, wt, weight, knap);
 }
 int main()
 {
@@ -63,7 +59,7 @@ int main()
     weight = (int *)malloc(n * sizeof(int));
     printf("Enter capacity: \n");
     scanf("%d", &capacity);
-    printf("\nEnter the value and weight of each item:\n");
+    printf("\nEnter the weight and value of each item:\n");
     printf("Weight Value\n");
     for (int i = 0; i < n; i++)
     {
