@@ -10,10 +10,11 @@ void warshall(int n)
     {
         for (int i = 1; i <= n; i++)
         {
-            for (int j = 1; j <= n; j++)
-            {
-                graph[i][j] = (graph[i][j] || (graph[i][k] && graph[k][j]));
-            }
+            if (graph[i][k] == 1)
+                for (int j = 1; j <= n; j++)
+                {
+                    graph[i][j] = (graph[i][j] || graph[k][j]);
+                }
         }
     }
 }
