@@ -28,6 +28,8 @@ void main()
     }
     int *vis = (int *)malloc(sizeof(int) * n);
     for (int i = 0; i < n; i++)
+        vis[i] = 0;
+    for (int i = 0; i < n; i++)
     {
         if (!vis[i])
             dfs(graph, i, vis);

@@ -14,7 +14,7 @@ int knapsac(int i, int j)
     int v = 0;
     if (knap[i][j] == -1)
     {
-        if (j < weight[i])
+        if (j < weight[i - 1])
         {
             v = knapsac(i - 1, j);
         }
