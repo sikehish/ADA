@@ -80,6 +80,8 @@ void main()
         for (i = 0; i <= n; i++)
             visited[i] = 0;
         genData(0);
+        acyclic = 1;
+        flag = 0;
         printf("Graph: ");
         count = 0;
         dfs(0, -1);
@@ -98,6 +100,8 @@ void main()
 
         // worst case
         count = 0;
+        acyclic = 1;
+        flag = 0;
         for (i = 0; i < n; i++)
             visited[i] = 0;
         genData(1);
