@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int arr[100][100], visited[100], n, acyclic = 1, q[100], front = 0, rear = -1;
+int arr[100][100], visited[100], n, acyclic = 1;
 int count = 0, flag = 0;
 
 void genData(int ch)
@@ -40,47 +40,19 @@ void genData(int ch)
     printf("\n");
 }
 
-void enqueue(int i)
+void dfs(int v, int P)
 {
-    q[++rear] = i;
-}
-
-int dequeue()
-{
-    return q[front++];
-}
-
-int isEmpty()
-{
-    if (front > rear)
-        return 1;
-    return 0;
-}
-
-void bfs(int v)
-{
-
-    enqueue(v);
     visited[v] = 1;
-    while (!isEmpty())
+    printf("%d--> ", v);
+    for (int i = 0; i < n; i++)
     {
-        int ele = dequeue();
-        printf("-->%c ", ele + 65);
-        for (int i = 0; i < n; i++)
+        if (arr[v][i])
         {
-            if (arr[ele][i])
-            {
-                count++;
-                if (!visited[i])
-                {
-                    enqueue(i);
-                    visited[i] = 1;
-                }
-                else
-                {
-                    acyclic = 0;
-                }
-            }
+            count++;
+            if (!visited[i])
+                dfs(i, v);
+            else if (visited[i] && i != P)
+                acyclic = 0;
         }
     }
 }
@@ -92,14 +64,14 @@ void connectandcyclic()
     else
         printf("\nGraph is not connected\n");
     if (acyclic)
-        printf("Graph is acyclic\n\n");
+        printf("Graph is acyclic\n");
     else
-        printf("Graph is cyclic\n\n");
+        printf("Graph is cyclic\n");
 }
 
 void main()
 {
-    FILE *fptr = fopen("bfs.txt", "a");
+    FILE *fptr = fopen("dfs.txt", "a");
     int i, j;
     n = 4;
     while (n <= 8)
@@ -112,15 +84,15 @@ void main()
         flag = 0;
         printf("Graph: ");
         count = 0;
-        bfs(0);
-        for (i = 1; i < n; i++)
+        dfs(0, -1);
+        for (i = 0; i < n; i++)
         {
             if (visited[i] == 0)
             {
 
                 flag = 1;
                 printf("\nGraph ");
-                bfs(i);
+                dfs(i, -1);
             }
         }
         connectandcyclic();
@@ -134,14 +106,14 @@ void main()
             visited[i] = 0;
         genData(1);
         printf("Graph: ");
-        bfs(0);
-        for (i = 1; i < n; i++)
+        dfs(0, -1);
+        for (i = 0; i < n; i++)
         {
             if (visited[i] == 0)
             {
                 flag = 1;
                 printf("\nGraph ");
-                bfs(i);
+                dfs(i, -1);
             }
         }
         connectandcyclic();
