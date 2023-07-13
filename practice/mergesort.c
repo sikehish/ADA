@@ -88,11 +88,10 @@ void mergeSort(int a[], int n)
             b[i] = a[i];
             blen++;
         }
-        i = 0;
-        for (j = n / 2; j < n; j++)
+        int num = 0;
+        for (j = i; j < n; j++)
         {
-            c[i] = a[j];
-            i++;
+            c[num++] = a[j];
             clen++;
         }
         mergeSort(b, n / 2);
