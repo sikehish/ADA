@@ -17,8 +17,8 @@ int mod_euclids(int m, int n)
 
 int euclids(int m, int n)
 {
-    int temp = 0, count = 0;
-    while (n > 0 && m > 0)
+    int count = 0;
+    while (m != n)
     {
         if (n > m)
             n -= m;
