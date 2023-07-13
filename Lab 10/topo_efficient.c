@@ -1,108 +1,86 @@
-// TOPO SR -> Effecient method using adj matrix
+// Topological sorting using source removal
 #include <stdio.h>
 #include <stdlib.h>
-int n, AdjMat[100][100], Queue[20], f = -1, r = -1;
-void Enqueue(int i)
+#define MAX 100
+
+int q[MAX], front = 0, rear = -1;
+
+int indegree(int src, int n, int graph[][MAX])
 {
-    if (r == 9)
-    {
-        printf("Queue Overflow\n");
-    }
-    else
-    {
-        if (f == -1)
-        {
-            f = 0;
-        }
-        r++;
-        Queue[r] = i;
-    }
+    int ct = 0;
+    for (int j = 0; j < n; j++)
+        ct += graph[j][src];
+    return ct;
 }
+
+void enqueue(int i)
+{
+    q[++rear] = i;
+    printf("-->%c ", i + 65);
+}
+
+int dequeue()
+{
+    return q[front++];
+}
+
 int isEmpty()
 {
-    if (f > r || f == -1)
-    {
+    if (front > rear)
         return 1;
-    }
     return 0;
 }
-int Dequeue()
+
+void topo(int graph[][MAX], int *indeg, int n)
 {
-    int item;
-    if (isEmpty())
+    int i, j, k, count = 0;
+    printf("The topological sort order is: ");
+    for (i = 0; i < n; i++)
     {
-        printf("Queue Underflow\n");
+        indeg[i] = indegree(i, n, graph);
+        if (indeg[i] == 0)
+            enqueue(i);
     }
-    else
+    while (count < n)
     {
-        item = Queue[f];
-        f++;
-    }
-    return item;
-}
-int indegree(int x)
-{
-    int indeg = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (AdjMat[i][x])
+        if (isEmpty())
         {
-            indeg++;
+            printf("Error: As Queue is empty,Cycle exists in the graph and hence it is not a DAG\n ");
+            return;
         }
-    }
-    return indeg;
-}
-void CreateGraph()
-{
-    printf("Enter No of vertices\n");
-    scanf("%d", &n);
-    printf("Enter Adjacency Matrix\n");
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
+
+        // dequeue source vertex with indegree=0 from the queue
+        int src = dequeue();
+
+        // removing src from ele to any other vertex
+        for (k = 0; k < n; k++)
         {
-            scanf("%d", &AdjMat[i][j]);
-        }
-    }
-}
-int main()
-{
-    int queue[10], stop = 0, InDeg[10], v;
-    CreateGraph();
-    for (int i = 0; i < n; i++)
-    {
-        InDeg[i] = indegree(i);
-        if (InDeg[i] == 0)
-        {
-            Enqueue(i);
-        }
-    }
-    while (!isEmpty() && stop < n)
-    {
-        v = Dequeue();
-        queue[stop++] = v;
-        for (int i = 0; i < n; i++)
-        {
-            if (AdjMat[v][i])
+            if (graph[src][k])
             {
-                AdjMat[v][i] = 0;
-                InDeg[i] = InDeg[i] - 1;
-                if (InDeg[i] == 0)
-                {
-                    Enqueue(i);
-                }
+                graph[src][k] = 0;
+                indeg[k]--;
+                if (indeg[k] == 0)
+                    enqueue(k);
             }
         }
+
+        count++;
     }
-    if (stop < n)
+}
+
+void main()
+{
+    int graph[MAX][MAX], indeg[MAX], i, j, k, n;
+    printf("\nEnter the number of nodes in the graph:\n");
+    scanf("%d", &n);
+    printf("\nEnter the adjacency matrix:\n");
+    for (i = 0; i < n; i++)
     {
-        printf("Cycle");
-        exit(1);
+        for (j = 0; j < n; j++)
+        {
+            scanf("%d", &graph[i][j]);
+        }
+        indeg[i] = 0;
     }
-    printf("Vertices in Topo Order\n");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", queue[i]);
-    }
-    return 0;
+    topo(graph, indeg, n);
 }
