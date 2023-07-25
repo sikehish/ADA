@@ -21,16 +21,17 @@ void main()
 
     // Finding minimum cost
     visited[0] = 1;
-    while (edges < n - 1)
+
+    while (edges < n - 1) // in a minimum spanning tree(MST), edges=vertices-1
     {
         min = 9999;
-        for (i = 0; i < n; i++)
+        for (i = 0; i < n; i++) // traversing the list of vertices and searching for src vertices i.e traversed/visited vertices
         {
-            if (visited[i])
+            if (visited[i]) // checking if the source vertex is visited, as an outgoing edge is possible only when the src vertex is traversed
             {
-                for (j = 0; j < n; j++)
+                for (j = 0; j < n; j++) // finding destination vertex
                 {
-                    if (min > cost[i][j] && !visited[j])
+                    if (min > cost[i][j] && !visited[j]) // ensuring that destination vertex is unvisited else if both src and destination vertices are visited then it'll result in a cycle
                     {
                         min = cost[i][j];
                         a = i;
@@ -41,7 +42,7 @@ void main()
         }
 
         printf("%d-->%d | Cost: %d\n", a, b, min);
-        visited[b] = 1;
+        visited[b] = 1; // marking destination vertex as visited
         min_cost += min;
         edges++;
     }
