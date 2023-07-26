@@ -1,7 +1,7 @@
 # ADA Lab
 ---
 Welcome to the Analysis and Design of Algorithms (ADA) Lab repository! This repository contains all the programs and code implementations performed during the lab sessions as per the official lab cycles.
-
+---
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -9,11 +9,11 @@ Welcome to the Analysis and Design of Algorithms (ADA) Lab repository! This repo
 - [Getting Started](#getting-started)
 - [How to Use](#how-to-use)
 - [Contributing](#contributing)
-
+---
 ## Introduction
 
 The Analysis and Design of Algorithms (ADA) Lab is an essential part of the course that helps students gain hands-on experience in implementing various algorithms and understanding their efficiency and behavior. This repository serves as a centralized location for all the lab programs, providing an organized and accessible resource for students and educators.
-
+---
 ## Lab Cycle Details
 
 Each lab cycle corresponds to specific topics and algorithms covered during the course. Below is a list of lab cycles included in this repository:
@@ -82,15 +82,15 @@ its analysis giving minimum 5 graphs with different number of vertices and edges
 15. Implement Dijkstra's algorithm to find the shortest path from a given source to all 
 other vertices and perform its analysis giving minimum 5 graphs with different 
 number of vertices and edges(starting with 4 vertices).<br>
-
+---
 ## Getting Started
 
 To get started with the ADA Lab repository, you can follow the steps below to clone the repository and have all the lab programs available locally on your machine:
-
+---
 ### Prerequisites
 
 Make sure you have Git installed on your system. If you don't have Git, you can download it from the official website: [Git Downloads](https://git-scm.com/downloads)
-
+---
 ### Clone the Repository
 
 Open your terminal or command prompt and run the following command:
@@ -98,13 +98,13 @@ Open your terminal or command prompt and run the following command:
 > git clone https://github.com/sikehish/ADA.git
 
 The above command will clone the entire repository to your local machine.
-
+---
 ## How to Use
 
 Once you have cloned the repository, navigate to the corresponding lab cycle directory to access the programs. Each lab cycle directory will contain its specific programs along with any necessary instructions or additional files.
 
 Feel free to explore the code and learn from the implementations. You can also modify the code, experiment with different algorithms, and contribute back to the repository.
-
+---
 ## Contributing
 
 We welcome contributions to enhance the repository and make it more useful for everyone. If you would like to contribute to this repository, follow these steps:
