@@ -1,5 +1,5 @@
 # ADA Lab
--------------
+-
 Welcome to the Analysis and Design of Algorithms (ADA) Lab repository! This repository contains all the programs and code implementations performed during the lab sessions as per the official lab cycles.
 
 ## Table of Contents
