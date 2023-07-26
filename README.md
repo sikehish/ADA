@@ -30,8 +30,7 @@ b) Binary Search( Recursive) <br>
 3. Implement the following elementary sorting algorithms and perform their analysis by 
 generating best case and worst case data. (Note: Any two may be asked in the 
 test/exam).<br>
-a) Selection Sort b) Bubble Sort c) Insertion Sort
-<br>
+a) Selection Sort b) Bubble Sort c) Insertion Sort<br>
 
 4. Implement Brute force string matching algorithm to search for a pattern of length ‘M’ 
 in a text of length ‘N’ (M<=N) and perform its analysis by generating best case and 
