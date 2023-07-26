@@ -66,7 +66,7 @@ int main()
         scanf("%d%d", &weight[i], &value[i]);
     }
     knapsac(capacity, weight, value, n);
-    free(values);
+    free(value);
     free(weight);
     return 0;
 }
