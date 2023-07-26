@@ -18,20 +18,35 @@ The Analysis and Design of Algorithms (ADA) Lab is an essential part of the cour
 
 Each lab cycle corresponds to specific topics and algorithms covered during the course. Below is a list of lab cycles included in this repository:
 
-1. Lab Cycle 1: Implement Euclid’s, Consecutive integer checking and Modified Euclid’s algorithms 
+1. Lab Cycle 1: <br>Implement Euclid’s, Consecutive integer checking and Modified Euclid’s algorithms 
 to find GCD of two nonnegative integers and perform comparative analysis by 
-generating best case and worst case data.
+generating best case and worst case data.<br>
 
-3. Lab Cycle 2: Implement the following searching algorithms and perform their analysis by 
-generating best case and worst case data.\n
-a) Sequential Search 
-b) Binary Search( Recursive)
+2. Lab Cycle 2: <br>Implement the following searching algorithms and perform their analysis by 
+generating best case and worst case data.<br>
+a) Sequential Search
+b) Binary Search( Recursive) <br>
 
-5. Lab Cycle 3: Searching Algorithms
-6. Lab Cycle 4: Greedy Algorithms
-7. Lab Cycle 5: Divide and Conquer Algorithms
-8. Lab Cycle 6: Dynamic Programming
-9. Lab Cycle 7: Backtracking Algorithms
+3. Lab Cycle 3:Implement the following elementary sorting algorithms and perform their analysis by 
+generating best case and worst case data. (Note: Any two may be asked in the 
+test/exam) <br>
+a) Selection Sort b) Bubble Sort c) Insertion Sort
+<br>
+
+4. Lab Cycle 4: Implement Brute force string matching algorithm to search for a pattern of length ‘M’ 
+in a text of length ‘N’ (M<=N) and perform its analysis by generating best case and 
+worst case data<br>
+
+5. Lab Cycle 5: Implement Merge Sort algorithm and perform its analysis by generating best case and 
+worst case data
+
+6. Lab Cycle 6: Implement Quick Sort algorithm and perform its by generating best case and worst
+case data.
+
+7. Lab Cycle 7: Implement DFS algorithm to check for connectivity and acyclicity of a graph. If not 
+connected, display the connected components. Perform its analysis by generating best 
+case and worst case data
+
 10. Lab Cycle 8: Graph Algorithms
 11. Lab Cycle 9: NP-Hard and Approximation Algorithms
 12. Lab Cycle 10: String Algorithms
