@@ -2,7 +2,6 @@
 
 void main()
 {
-
     int i, j, edges = 0;
     int a, b, min, min_cost = 0;
     int cost[50][50], n, visited[50] = {0};

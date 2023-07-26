@@ -37,4 +37,6 @@ void main()
     printf("Topological sorting\n");
     for (int i = tos; i >= 0; --i)
         printf("%d\n", stk[i]);
+
+    free(vis);
 }
