@@ -23,7 +23,7 @@ to find GCD of two nonnegative integers and perform comparative analysis by
 generating best case and worst case data.
 
 3. Lab Cycle 2: Implement the following searching algorithms and perform their analysis by 
-generating best case and worst case data.
+generating best case and worst case data.\n
 a) Sequential Search 
 b) Binary Search( Recursive)
 
