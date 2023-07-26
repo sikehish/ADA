@@ -18,16 +18,27 @@ The Analysis and Design of Algorithms (ADA) Lab is an essential part of the cour
 
 Each lab cycle corresponds to specific topics and algorithms covered during the course. Below is a list of lab cycles included in this repository:
 
-1. Lab Cycle 1: Introduction to Algorithm Analysis
-2. Lab Cycle 2: Sorting Algorithms
-3. Lab Cycle 3: Searching Algorithms
-4. Lab Cycle 4: Greedy Algorithms
-5. Lab Cycle 5: Divide and Conquer Algorithms
-6. Lab Cycle 6: Dynamic Programming
-7. Lab Cycle 7: Backtracking Algorithms
-8. Lab Cycle 8: Graph Algorithms
-9. Lab Cycle 9: NP-Hard and Approximation Algorithms
-10. Lab Cycle 10: String Algorithms
+1. Lab Cycle 1: Implement Euclid’s, Consecutive integer checking and Modified Euclid’s algorithms 
+to find GCD of two nonnegative integers and perform comparative analysis by 
+generating best case and worst case data.
+
+3. Lab Cycle 2: Implement the following searching algorithms and perform their analysis by 
+generating best case and worst case data.
+a) Sequential Search 
+b) Binary Search( Recursive)
+
+5. Lab Cycle 3: Searching Algorithms
+6. Lab Cycle 4: Greedy Algorithms
+7. Lab Cycle 5: Divide and Conquer Algorithms
+8. Lab Cycle 6: Dynamic Programming
+9. Lab Cycle 7: Backtracking Algorithms
+10. Lab Cycle 8: Graph Algorithms
+11. Lab Cycle 9: NP-Hard and Approximation Algorithms
+12. Lab Cycle 10: String Algorithms
+13. Lab Cycle 10: String Algorithms
+14. Lab Cycle 10: String Algorithms
+15. Lab Cycle 10: String Algorithms
+16. Lab Cycle 10: String Algorithms
 
 ## Getting Started
 
