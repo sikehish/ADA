@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <time.h>
 
-void dij(int n, int cost[10][10], int s, int dist[10])
+void dijkstra(int n, int cost[10][10], int s, int dist[10])
 {
     int i, v, count = 1, min, visited[10];
 
@@ -34,13 +33,14 @@ void dij(int n, int cost[10][10], int s, int dist[10])
     }
 }
 
-int main()
+void main()
 {
-    double clk;
-    clock_t starttime, endtime;
-    int i, j, n, s, cost[10][10], dist[10];
+    int i, j, n, s, cost[10][10], dist[10]; // dist stores the distance from source vertex to the given vertex
+    // cost matrix stores the cost of each edge(weight) and if no edge exists then the user enters 0, and is then converted to 999(which represents infinity)
+
     printf("Enter the total number of nodes: ");
     scanf("%d", &n);
+
     printf("Read the cost matrix:\n");
     for (i = 1; i <= n; i++)
     {
@@ -51,19 +51,15 @@ int main()
                 cost[i][j] = 999;
         }
     }
+
     printf("Enter the source vertex: ");
     scanf("%d", &s);
-    starttime = clock();
-    dij(n, cost, s, dist);
-    endtime = clock();
+    dijkstra(n, cost, s, dist);
+
     printf("Shortest path from %d is:\n", s);
     for (i = 1; i <= n; i++)
     {
         if (s != i)
-            printf("%d to %d = %d\n", s, i, dist[i]); // Added newline character
+            printf("%d -> %d = %d\n", s, i, dist[i]); // Added newline character
     }
-    clk = (double)(endtime - starttime) / CLOCKS_PER_SEC;
-    printf("The time taken is %f\n", clk);
-
-    return 0;
 }
