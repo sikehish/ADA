@@ -18,42 +18,71 @@ The Analysis and Design of Algorithms (ADA) Lab is an essential part of the cour
 
 Each lab cycle corresponds to specific topics and algorithms covered during the course. Below is a list of lab cycles included in this repository:
 
-1. Lab Cycle 1: <br>Implement Euclid’s, Consecutive integer checking and Modified Euclid’s algorithms 
+1. Implement Euclid’s, Consecutive integer checking and Modified Euclid’s algorithms 
 to find GCD of two nonnegative integers and perform comparative analysis by 
 generating best case and worst case data.<br>
 
-2. Lab Cycle 2: <br>Implement the following searching algorithms and perform their analysis by 
+2. Implement the following searching algorithms and perform their analysis by 
 generating best case and worst case data.<br>
 a) Sequential Search
 b) Binary Search( Recursive) <br>
 
-3. Lab Cycle 3:Implement the following elementary sorting algorithms and perform their analysis by 
+3. Implement the following elementary sorting algorithms and perform their analysis by 
 generating best case and worst case data. (Note: Any two may be asked in the 
-test/exam) <br>
+test/exam).<br>
 a) Selection Sort b) Bubble Sort c) Insertion Sort
 <br>
 
-4. Lab Cycle 4: Implement Brute force string matching algorithm to search for a pattern of length ‘M’ 
+4. Implement Brute force string matching algorithm to search for a pattern of length ‘M’ 
 in a text of length ‘N’ (M<=N) and perform its analysis by generating best case and 
-worst case data<br>
+worst case data.<br>
 
-5. Lab Cycle 5: Implement Merge Sort algorithm and perform its analysis by generating best case and 
-worst case data
+5. Implement Merge Sort algorithm and perform its analysis by generating best case and 
+worst case data.<br>
 
-6. Lab Cycle 6: Implement Quick Sort algorithm and perform its by generating best case and worst
-case data.
+6. Implement Quick Sort algorithm and perform its by generating best case and worst
+case data.<br>
 
-7. Lab Cycle 7: Implement DFS algorithm to check for connectivity and acyclicity of a graph. If not 
+7. Implement DFS algorithm to check for connectivity and acyclicity of a graph. If not 
 connected, display the connected components. Perform its analysis by generating best 
-case and worst case data
+case and worst case data.<br>
 
-10. Lab Cycle 8: Graph Algorithms
-11. Lab Cycle 9: NP-Hard and Approximation Algorithms
-12. Lab Cycle 10: String Algorithms
-13. Lab Cycle 10: String Algorithms
-14. Lab Cycle 10: String Algorithms
-15. Lab Cycle 10: String Algorithms
-16. Lab Cycle 10: String Algorithms
+8. Implement BFS algorithm to check for connectivity and acyclicity of a graph. If not 
+connected, display the connected components. Perform its analysis by generating best 
+case and worst case data.<br>
+
+9. Implement DFS based algorithm to list the vertices of a directed graph in Topological 
+ordering. Perform its analysis giving minimum 5 graphs with different number of 
+vertices and edges. (starting with 4 vertices).<br>
+
+10. Implement source removal algorithm to list the vertices of a directed graph in 
+Topological ordering. Perform its analysis giving minimum 5 graphs with different 
+number of vertices and edges. (starting with 4 vertices).<br>
+
+11. Implement heap sort algorithm with bottom-up heap construction. Perform its 
+analysis by generating best case and worst case data.<br>
+
+12. a) Implement Warshall’s Algorithm to find the transitive closure of a directed graph 
+and perform its analysis giving minimum 5 graphs with different number of vertices 
+and edges. (starting with 4 vertices).<br>
+b) Implement Floyd’s Algorithm to find All-pair shortest paths for a graph and 
+perform its analysis giving minimum 5 graphs with different number of vertices and 
+edges(starting with 4 vertices).<br>
+
+13.a) Implement Warshall’s Algorithm to find the transitive closure of a directed graph 
+and perform its analysis giving minimum 5 graphs with different number of vertices 
+and edges. (starting with 4 vertices).
+b) Implement Floyd’s Algorithm to find All-pair shortest paths for a graph and 
+perform its analysis giving minimum 5 graphs with different number of vertices and 
+edges(starting with 4 vertices).<br>
+
+14. Implement Prim’s algorithm to find Minimum Spanning Tree of a graph and perform 
+its analysis giving minimum 5 graphs with different number of vertices and edges
+(starting with 4 vertices).<br>
+
+15. Implement Dijkstra's algorithm to find the shortest path from a given source to all 
+other vertices and perform its analysis giving minimum 5 graphs with different 
+number of vertices and edges(starting with 4 vertices).<br>
 
 ## Getting Started
 
