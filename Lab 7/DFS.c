@@ -90,11 +90,10 @@ void main()
         {
             if (visited[i] == 0)
             {
-
-                printf("\nGraph: ");
-                dfs(i, -1);
                 if (i != 0)
                     flag = 1;
+                printf("\nGraph: ");
+                dfs(i, -1);
             }
         }
         connectandcyclic();
@@ -115,10 +114,10 @@ void main()
         {
             if (visited[i] == 0)
             {
-                printf("\nGraph: ");
-                dfs(i, -1);
                 if (i != 0)
                     flag = 1;
+                printf("\nGraph: ");
+                dfs(i, -1);
             }
         }
         connectandcyclic();
