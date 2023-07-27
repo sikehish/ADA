@@ -22,6 +22,7 @@ int knapsack(int n, int weight[], int values[], int wt)
                 knap[i][j] = maxi(knap[i - 1][j], values[i - 1] + knap[i - 1][j - weight[i - 1]]);
         }
     }
+    printf("\n");
     return knap[n][wt];
 }
 

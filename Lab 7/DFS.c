@@ -77,43 +77,50 @@ void main()
     while (n <= 8)
     {
         // best case
+        printf("\nBest case:\n\n");
         for (i = 0; i <= n; i++)
             visited[i] = 0;
         genData(0);
+
         acyclic = 1;
         flag = 0;
+
         printf("Graph: ");
         count = 0;
-        dfs(0, -1);
         for (i = 0; i < n; i++)
         {
             if (visited[i] == 0)
             {
 
-                flag = 1;
-                printf("\nGraph ");
                 dfs(i, -1);
+                printf("\nGraph ");
+                if (i != 0)
+                    flag = 1;
             }
         }
         connectandcyclic();
         fprintf(fptr, "%d\t%d\t", n, count);
 
         // worst case
+        printf("\n\nWorst case:\n");
         count = 0;
         acyclic = 1;
         flag = 0;
+
         for (i = 0; i < n; i++)
             visited[i] = 0;
+
         genData(1);
         printf("Graph: ");
-        dfs(0, -1);
+
         for (i = 0; i < n; i++)
         {
             if (visited[i] == 0)
             {
-                flag = 1;
-                printf("\nGraph ");
                 dfs(i, -1);
+                printf("\nGraph ");
+                if (i != 0)
+                    flag = 1;
             }
         }
         connectandcyclic();
