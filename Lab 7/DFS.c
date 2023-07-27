@@ -125,4 +125,6 @@ void main()
         fprintf(fptr, "%d\n", count);
         n = n + 1;
     }
+
+    fclose(fptr);
 }
