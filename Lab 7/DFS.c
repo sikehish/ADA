@@ -85,15 +85,14 @@ void main()
         acyclic = 1;
         flag = 0;
 
-        printf("Graph: ");
         count = 0;
         for (i = 0; i < n; i++)
         {
             if (visited[i] == 0)
             {
 
+                printf("\nGraph: ");
                 dfs(i, -1);
-                printf("\nGraph ");
                 if (i != 0)
                     flag = 1;
             }
@@ -111,14 +110,13 @@ void main()
             visited[i] = 0;
 
         genData(1);
-        printf("Graph: ");
 
         for (i = 0; i < n; i++)
         {
             if (visited[i] == 0)
             {
+                printf("\nGraph: ");
                 dfs(i, -1);
-                printf("\nGraph ");
                 if (i != 0)
                     flag = 1;
             }
