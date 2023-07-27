@@ -53,7 +53,11 @@ int dequeue()
 int isEmpty()
 {
     if (front > rear)
+    {
+        front = 0;
+        rear = -1;
         return 1;
+    }
     return 0;
 }
 
@@ -119,7 +123,7 @@ void main()
             {
 
                 flag = 1;
-                printf("\nGraph ");
+                printf("\nGraph: ");
                 bfs(i);
             }
         }
