@@ -67,7 +67,6 @@ void bfs(int v)
 
     enqueue(v);
     visited[v] = 1;
-    parent[v] = -1;
     while (!isEmpty())
     {
         int ele = dequeue();
