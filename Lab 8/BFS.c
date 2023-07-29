@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int arr[100][100], visited[100], n, acyclic = 1, q[100], front = 0, rear = -1;
+int parent[100];
 int count = 0, flag = 0;
 
 void genData(int ch)
@@ -78,9 +79,10 @@ void bfs(int v)
                 if (!visited[i])
                 {
                     enqueue(i);
+                    parent[i] = ele;
                     visited[i] = 1;
                 }
-                else
+                else if (visited[i] && ele != parent[i])
                 {
                     acyclic = 0;
                 }
@@ -110,7 +112,10 @@ void main()
     {
         // best case
         for (i = 0; i <= n; i++)
+        {
             visited[i] = 0;
+            parent[i] = -1;
+        }
         genData(0);
         acyclic = 1;
         flag = 0;
@@ -124,6 +129,7 @@ void main()
 
                 flag = 1;
                 printf("\nGraph: ");
+                parent[i] = -1;
                 bfs(i);
             }
         }
@@ -135,7 +141,10 @@ void main()
         acyclic = 1;
         flag = 0;
         for (i = 0; i < n; i++)
+        {
             visited[i] = 0;
+            parent[i] = -1;
+        }
         genData(1);
         printf("Graph: ");
         bfs(0);
@@ -145,6 +154,7 @@ void main()
             {
                 flag = 1;
                 printf("\nGraph ");
+                parent[i] = -1;
                 bfs(i);
             }
         }
