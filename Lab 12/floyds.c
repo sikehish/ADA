@@ -31,7 +31,7 @@ void main()
     int n, i, j;
     printf("\nEnter the number of vertices:\n");
     scanf("%d", &n);
-    printf("\nEnter 99999 for representing infinity.\n");
+    printf("\nEnter 99 for representing infinity.\n");
     printf("\nEnter the weight matrix:\n");
     for (i = 1; i <= n; i++)
     {
