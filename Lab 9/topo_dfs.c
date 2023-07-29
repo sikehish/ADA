@@ -61,7 +61,7 @@ void main()
     {
         if (!vis[i])
         {
-            detect(graph, i, vis2); // This is optional. I foyu dont want to detect cycle, then you may skip this function and declaration of vis2 array
+            detect(graph, i, vis2); // This is optional. If you dont want to detect cycle, then you may skip this function and declaration of vis2 array
             dfs(graph, i, vis);
         }
     }
