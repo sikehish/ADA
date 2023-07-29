@@ -82,7 +82,7 @@ void bfs(int v)
                     parent[i] = ele;
                     visited[i] = 1;
                 }
-                else if (visited[i] && ele != parent[i])
+                else if (visited[i] && i != parent[ele])
                 {
                     acyclic = 0;
                 }
