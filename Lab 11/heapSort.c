@@ -34,7 +34,7 @@ void heapsort(int a[], int n)
     // heapification
     for (i = n / 2; i >= 1; i--)
         heapify(a, n, i);
-    // replace root witht he bottom last element
+    // replace root with the bottom last element
     for (i = n; i > 1; i--)
     {
         swap(a + 1, a + i);

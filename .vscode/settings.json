@@ -3,5 +3,14 @@
         "time.h": "c",
         "stdlib.h": "c",
         "stdio.h": "c"
-    }
+    },
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "c"
+    ]
 }
