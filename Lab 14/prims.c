@@ -40,7 +40,7 @@ void main()
             }
         }
 
-        printf("%d-->%d | Cost: %d\n", a, b, min);
+        printf("%c-->%c | Cost: %d\n", a + 65, b + 65, min);
         visited[b] = 1; // marking destination vertex as visited
         min_cost += min;
         edges++;

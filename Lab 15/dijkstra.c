@@ -30,7 +30,7 @@ void dijkstra(int n, int cost[10][10], int s, int dist[10])
         visited[v] = 1;
         count++;
 
-                for (i = 1; i <= n; i++)
+        for (i = 1; i <= n; i++)
         {
             if (dist[i] > dist[v] + cost[v][i])
                 dist[i] = dist[v] + cost[v][i];
