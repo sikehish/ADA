@@ -25,7 +25,8 @@ void main()
     fp = fopen("str.dat", "a");
     int m = 1000;
     char str[1000];
-    // for(int i=0; i<m; i++) str[i]='a';
+    for (int i = 0; i < m; i++)
+        str[i] = 'a';
     for (int i = 100; i <= m; i += 100)
     { // i represents size of pattern
 
