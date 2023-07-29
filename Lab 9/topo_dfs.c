@@ -4,13 +4,21 @@
 #include <stdlib.h>
 int n, stk[20], tos = -1;
 
-void dfs(int graph[][n], int v, int *vis)
+void dfs(int graph[][n], int v, int *vis, int parent)
 {
     vis[v] = 1;
     for (int next = 0; next < n; ++next)
     {
-        if (graph[v][next] && !vis[next])
-            dfs(graph, next, vis);
+        if (graph[v][next])
+        {
+            if (!vis[next])
+                dfs(graph, next, vis, v);
+            else if (vis[next] && next != parent)
+            {
+                printf("The graph is cyclic, hence we cannot find the Topological sorting order.\n");
+                exit(0);
+            }
+        }
     }
     stk[++tos] = v;
 }
@@ -20,7 +28,7 @@ void main()
     printf("Enter no of vertices\n");
     scanf("%d", &n);
     int graph[n][n];
-    printf("Adjacency matrix>>\n");
+    printf("Adjacency matrix\n");
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
@@ -32,11 +40,12 @@ void main()
     for (int i = 0; i < n; i++)
     {
         if (!vis[i])
-            dfs(graph, i, vis);
+            dfs(graph, i, vis, -1);
     }
     printf("Topological sorting\n");
     for (int i = tos; i >= 0; --i)
-        printf("%d\n", stk[i]);
+        printf("%c ", stk[i] + 65);
+    printf("\n");
 
     free(vis);
 }
