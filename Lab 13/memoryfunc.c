@@ -19,7 +19,7 @@ int knapsac(int i, int j)
     return knap[i][j];
 }
 
-void composition(int n, int wt, int weight[])
+void composition(int n, int wt)
 {
     int num = 0;
     int subset[n];
@@ -67,7 +67,7 @@ int main()
     int sol = knapsac(n, capacity);
 
     printf("\nThe optimum knapsac value is: %d\n", sol);
-    composition(n, capacity, weight);
+    composition(n, capacity);
 
     return 0;
 }
