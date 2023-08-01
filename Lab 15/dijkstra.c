@@ -68,3 +68,23 @@ void main()
             printf("%d -> %d = %d\n", s, i, dist[i]); // Added newline character
     }
 }
+
+// OUTPUT
+//  Enter the number of nodes
+//  7
+//  Enter the cost matrix
+//  0 2 6 0 0 0 0
+//  2 0 0 5 0 0 0
+//  6 0 0 8 0 0 0
+//  0 5 8 0 10 15 0
+//  0 0 0 10 0 6 2
+//  0 0 0 15 6 0 6
+//  0 0 0 0 2 6 0
+//  Enter the source node
+//  1
+//  0 -> 1 = 2
+//  0 -> 2 = 6
+//  0 -> 3 = 7
+//  0 -> 4 = 17
+//  0 -> 5 = 22
+//  0 -> 6 = 19
