@@ -14,8 +14,8 @@ void dijikstra(int src, int n)
         visited[i] = 0;
     }
 
-    dist[0] = 0;
-    visited[0] = 1;
+    dist[src] = 0;
+    visited[src] = 1;
 
     int completed = 1;
     while (completed < n)
