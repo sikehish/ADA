@@ -7,23 +7,20 @@ int binary(int arr[], int key, int l, int r)
 {
     if (l > r)
     {
-        count += 1;
         return -1;
     }
     int m = (l + r) / 2;
+    count += 1;
     if (arr[m] == key)
     {
-        count += 2;
         return m;
     }
     else if (arr[m] < key)
     {
-        count += 3;
         return binary(arr, key, m + 1, r);
     }
     else
     {
-        count += 3;
         return binary(arr, key, l, m - 1);
     }
 }

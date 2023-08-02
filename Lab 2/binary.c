@@ -6,23 +6,20 @@ int binarySearch(int *arr, int low, int high, int key, int *count)
 {
     if (low > high)
     {
-        *count += 1;
         return -1;
     }
     int mid = low + (high - low) / 2;
+    *count += 1;
     if (arr[mid] == key)
     {
-        *count += 2;
         return mid;
     }
     else if (arr[mid] < key)
     {
-        *count += 3;
         return binarySearch(arr, mid + 1, high, key, count);
     }
     else
     {
-        *count += 3;
         return binarySearch(arr, low, mid - 1, key, count);
     }
 }
