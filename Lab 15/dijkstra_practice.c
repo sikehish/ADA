@@ -71,3 +71,37 @@ void main()
             printf("%d -> %d = %d\n", src, i, dist[i]);
     }
 }
+
+// OUTPUT
+//  Enter the number of nodes
+//  7
+//  Enter the cost matrix
+//  0 2 6 0 0 0 0
+//  2 0 0 5 0 0 0
+//  6 0 0 8 0 0 0
+//  0 5 8 0 10 15 0
+//  0 0 0 10 0 6 2
+//  0 0 0 15 6 0 6
+//  0 0 0 0 2 6 0
+//  Enter the source node
+//  1
+//  0 -> 1 = 2
+//  0 -> 2 = 6
+//  0 -> 3 = 7
+//  0 -> 4 = 17
+//  0 -> 5 = 22
+//  0 -> 6 = 19
+
+// Enter the total number of nodes: 5
+// Read the cost matrix:
+// 0 2 4 1 0
+// 2 0 0 3 10
+// 4 0 0 2 0
+// 1 3 2 0 7
+// 0 10 0 7 0
+// Enter the source vertex: 1
+// Shortest path from 1 is:
+// 1 -> 2 = 2
+// 1 -> 3 = 3
+// 1 -> 4 = 1
+// 1 -> 5 = 8
