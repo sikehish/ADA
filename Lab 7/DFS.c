@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int arr[100][100], visited[100], n, acyclic = 1;
+int arr[100][100], visited[100] = {0}, n, acyclic = 1;
 int count = 0, flag = 0;
 
 void genData(int ch)
@@ -13,8 +13,10 @@ void genData(int ch)
         {
             for (int j = 0; j < n; j++)
             {
-                if (j == i + 1)
+                if (j == i + 1 || i == j + 1)
+                {
                     arr[i][j] = 1;
+                }
                 else
                     arr[i][j] = 0;
                 printf("%d\t", arr[i][j]);
@@ -69,11 +71,47 @@ void connectandcyclic()
         printf("Graph is cyclic\n");
 }
 
+void correctness()
+{
+    int src;
+    printf("Enter the number of nodes\n");
+    scanf("%d", &n);
+
+    printf("Enter the graph\n");
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            scanf("%d", &arr[i][j]);
+
+    printf("Enter the source vertex\n");
+    scanf("%d", &src);
+
+    printf("Graph Traversal\n");
+    dfs(src, -1);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (visited[i] == 0)
+        {
+            flag = 1;
+            printf("\nGraph Traversal(Disconnected): \n");
+            dfs(i, -1);
+        }
+    }
+
+    connectandcyclic();
+}
+
 void main()
 {
-    FILE *fptr = fopen("dfs.txt", "a");
+    FILE *fptr = fopen("dfs.dat", "a");
     int i, j;
     n = 4;
+
+    correctness();
+
+    for (i = 0; i < n; i++)
+        visited[i] = 0;
+
     while (n <= 8)
     {
         // best case
