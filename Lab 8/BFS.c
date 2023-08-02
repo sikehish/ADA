@@ -14,8 +14,10 @@ void genData(int ch)
         {
             for (int j = 0; j < n; j++)
             {
-                if (j == i + 1)
+                if (j == i + 1 || i == j + 1)
+                {
                     arr[i][j] = 1;
+                }
                 else
                     arr[i][j] = 0;
                 printf("%d\t", arr[i][j]);
@@ -103,15 +105,53 @@ void connectandcyclic()
         printf("Graph is cyclic\n\n");
 }
 
+void correctness()
+{
+    int src;
+    printf("Enter the number of nodes\n");
+    scanf("%d", &n);
+
+    printf("Enter the graph\n");
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            scanf("%d", &arr[i][j]);
+
+    printf("Enter the source vertex\n");
+    scanf("%d", &src);
+
+    printf("Graph Traversal\n");
+    bfs(src);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (visited[i] == 0)
+        {
+            flag = 1;
+            printf("\nGraph Traversal(Disconnected): \n");
+            parent[i] = -1;
+            bfs(i);
+        }
+    }
+
+    connectandcyclic();
+}
+
 void main()
 {
-    FILE *fptr = fopen("bfs.txt", "a");
+    FILE *fptr = fopen("bfs.dat", "a");
     int i, j;
     n = 4;
+    for (i = 0; i < n; i++)
+    {
+        visited[i] = 0;
+        parent[i] = -1;
+    }
+    correctness();
+
     while (n <= 8)
     {
         // best case
-        for (i = 0; i <= n; i++)
+        for (i = 0; i < n; i++)
         {
             visited[i] = 0;
             parent[i] = -1;
